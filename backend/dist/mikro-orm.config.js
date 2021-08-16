@@ -6,9 +6,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Post_1 = require("./entities/Post");
 const constants_1 = require("./constants");
 const path_1 = __importDefault(require("path"));
+const env_1 = require("./env");
+env_1.setEnv();
 exports.default = {
-    dbName: 'reddit-clone',
-    user: process.env.DB_USERNAME,
+    dbName: process.env.DB_NAME,
+    user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
     type: 'postgresql',
     entities: [Post_1.Post],

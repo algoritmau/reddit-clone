@@ -2,10 +2,13 @@ import { Post } from './entities/Post'
 import { __prod__ } from './constants'
 import { MikroORM } from '@mikro-orm/core'
 import path from 'path'
+import { setEnv } from './env'
+
+setEnv()
 
 export default {
-  dbName: 'reddit-clone',
-  user: process.env.DB_USERNAME, // TODO: Set up dotenv to encode hide values
+  dbName: process.env.DB_NAME,
+  user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   type: 'postgresql',
   entities: [Post],
