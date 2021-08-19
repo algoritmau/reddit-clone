@@ -1,3 +1,4 @@
+import 'reflect-metadata'
 import { Post } from './entities/Post'
 import { __prod__ } from './constants'
 import { MikroORM } from '@mikro-orm/core'
